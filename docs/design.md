@@ -33,5 +33,8 @@
 <!-- Messy PDFs/tables, missed supersession links, LLM cost, site rate limits. -->
 
 ## 7. Decisions
-- Retrieval: (fill at 16:15 after reading ch. 6)
+- - Retrieval: v0 = vector-only baseline (pgvector). v1 = hybrid: Postgres full-text
+  search + vector, merged with reciprocal rank fusion. Keep v1 only if it beats v0
+  on Recall@5 and MRR@10 on the golden set. Expected gain: queries often contain
+  exact circular numbers and acronyms that embeddings handle poorly.
 - Corpus scope: (Day 2, corpus exploration)
